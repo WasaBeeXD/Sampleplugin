@@ -1,17 +1,81 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {}
+    "net8.0-windows7.0": {
+      "DalamudPackager/15.0.0": {
+        "type": "package",
+        "build": {
+          "build/DalamudPackager.props": {},
+          "build/DalamudPackager.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/DalamudPackager.props": {}
+        }
+      },
+      "DotNet.ReproducibleBuilds/1.2.39": {
+        "type": "package",
+        "build": {
+          "buildTransitive/DotNet.ReproducibleBuilds.props": {},
+          "buildTransitive/DotNet.ReproducibleBuilds.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/DotNet.ReproducibleBuilds.props": {},
+          "buildMultiTargeting/DotNet.ReproducibleBuilds.targets": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DalamudPackager/15.0.0": {
+      "sha512": "411vwC8/X8Z/sQ2TI6v3SvOn66xFPeOjFn3Zn+h0d3Ox2t1kFm66AhDvmx/qcMwVrR+Hidxj0dadpQ2dgyXMBQ==",
+      "type": "package",
+      "path": "dalamudpackager/15.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/DalamudPackager.props",
+        "build/DalamudPackager.targets",
+        "buildMultiTargeting/DalamudPackager.props",
+        "dalamudpackager.15.0.0.nupkg.sha512",
+        "dalamudpackager.nuspec",
+        "tasks/net48/DalamudPackager.dll",
+        "tasks/net48/Newtonsoft.Json.dll",
+        "tasks/net48/YamlDotNet.dll",
+        "tasks/netstandard2.1/DalamudPackager.dll",
+        "tasks/netstandard2.1/Newtonsoft.Json.dll",
+        "tasks/netstandard2.1/YamlDotNet.dll"
+      ]
+    },
+    "DotNet.ReproducibleBuilds/1.2.39": {
+      "sha512": "fcFN01tDTIQqDuTwr1jUQK/geofiwjG5DycJQOnC72i1SsLAk1ELe+apBOuZ11UMQG8YKFZG1FgvjZPbqHyatg==",
+      "type": "package",
+      "path": "dotnet.reproduciblebuilds/1.2.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/DotNet.ReproducibleBuilds.props",
+        "build/DotNet.ReproducibleBuilds.targets",
+        "buildMultiTargeting/DotNet.ReproducibleBuilds.props",
+        "buildMultiTargeting/DotNet.ReproducibleBuilds.targets",
+        "buildTransitive/DotNet.ReproducibleBuilds.props",
+        "buildTransitive/DotNet.ReproducibleBuilds.targets",
+        "dotnet.reproduciblebuilds.1.2.39.nupkg.sha512",
+        "dotnet.reproduciblebuilds.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": []
+    "net8.0-windows7.0": [
+      "DalamudPackager >= 15.0.0",
+      "DotNet.ReproducibleBuilds >= 1.2.39"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\larsv\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.0.1",
     "restore": {
       "projectUniqueName": "C:\\repos\\SamplePlugin\\SamplePlugin.csproj",
       "projectName": "SamplePlugin",
@@ -20,14 +84,14 @@
       "outputPath": "C:\\repos\\SamplePlugin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\repos\\SamplePlugin\\NuGet.Config",
         "C:\\Users\\larsv\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
-        "https://nuget.org": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://myget.org": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -40,6 +104,9 @@
           "NU1605"
         ]
       },
+      "restoreLockProperties": {
+        "restorePackagesWithLockFile": "true"
+      },
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
@@ -49,6 +116,17 @@
     "frameworks": {
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "DalamudPackager": {
+            "target": "Package",
+            "version": "[15.0.0, )"
+          },
+          "DotNet.ReproducibleBuilds": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[1.2.39, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\repos\\SamplePlugin\\SamplePlugin.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.0.1",
       "restore": {
         "projectUniqueName": "C:\\repos\\SamplePlugin\\SamplePlugin.csproj",
         "projectName": "SamplePlugin",
@@ -14,14 +14,14 @@
         "outputPath": "C:\\repos\\SamplePlugin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\repos\\SamplePlugin\\NuGet.Config",
           "C:\\Users\\larsv\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
         ],
         "sources": {
-          "https://nuget.org": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://myget.org": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
@@ -34,6 +34,9 @@
             "NU1605"
           ]
         },
+        "restoreLockProperties": {
+          "restorePackagesWithLockFile": "true"
+        },
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
@@ -43,6 +46,17 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "DalamudPackager": {
+              "target": "Package",
+              "version": "[15.0.0, )"
+            },
+            "DotNet.ReproducibleBuilds": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.39, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
