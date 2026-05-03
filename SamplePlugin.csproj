@@ -4,9 +4,22 @@
     <Version>1.0.0.1</Version>
     <PackageProjectUrl>https://github.com/WasaBeeXD/Sampleplugin</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
-    <TargetFramework>net8.0-windows</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+    <PropertyGroup>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <Platforms>x64</Platforms>
+        <Nullable>enable</Nullable>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <LangVersion>latest</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <OutputType>Library</OutputType>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    </PropertyGroup>
 
   <ItemGroup>
     <Content Include="..\Data\goat.png">
