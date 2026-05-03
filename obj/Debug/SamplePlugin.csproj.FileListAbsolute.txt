@@ -1,0 +1,6 @@
+C:\repos\SamplePlugin\obj\Debug\SamplePlugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\SamplePlugin\obj\Debug\SamplePlugin.AssemblyInfoInputs.cache
+C:\repos\SamplePlugin\obj\Debug\SamplePlugin.AssemblyInfo.cs
+C:\repos\SamplePlugin\obj\Debug\SamplePlugin.csproj.CoreCompileInputs.cache
+C:\repos\SamplePlugin\obj\Debug\SamplePlugin.sourcelink.json
+C:\repos\SamplePlugin\obj\Debug\SamplePlugin.csproj.AssemblyReference.cache
