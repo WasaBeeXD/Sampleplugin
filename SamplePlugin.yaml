@@ -1,0 +1,10 @@
+name: Test Plugin
+author: Wasa Bee
+punchline: Does nothing! # short summary that fits on one line
+description: |- # long description, shown when your plugin is clicked on
+  This is a test plugin - this first line is a summary.
+
+  Down here is a more detailed explanation of what the plugin
+  does, manually wrapped to make sure it stays visible in the
+  installer.
+repo_url: https://github.com/WasaBeeXD/Sampleplugin # where can users find your plugin's source code?
