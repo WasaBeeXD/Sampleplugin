@@ -4,6 +4,7 @@
     <Version>1.0.0.1</Version>
     <PackageProjectUrl>https://github.com/WasaBeeXD/Sampleplugin</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
