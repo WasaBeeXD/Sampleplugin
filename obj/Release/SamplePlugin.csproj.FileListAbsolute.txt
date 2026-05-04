@@ -1,0 +1,10 @@
+C:\repos\SamplePlugin\bin\Release\goat.png
+C:\repos\SamplePlugin\bin\Release\SamplePlugin.deps.json
+C:\repos\SamplePlugin\bin\Release\SamplePlugin.dll
+C:\repos\SamplePlugin\obj\Release\SamplePlugin.csproj.AssemblyReference.cache
+C:\repos\SamplePlugin\obj\Release\SamplePlugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\repos\SamplePlugin\obj\Release\SamplePlugin.AssemblyInfoInputs.cache
+C:\repos\SamplePlugin\obj\Release\SamplePlugin.AssemblyInfo.cs
+C:\repos\SamplePlugin\obj\Release\SamplePlugin.csproj.CoreCompileInputs.cache
+C:\repos\SamplePlugin\obj\Release\SamplePlugin.sourcelink.json
+C:\repos\SamplePlugin\obj\Release\SamplePlugin.dll

@@ -3,10 +3,9 @@
     "Author": "WasaBeeXD",
     "Name": "SamplePlugin",
     "InternalName": "SamplePlugin",
-    "Description": "Mein erstes Plugin",
-    "RepoUrl": "https://github.com",
-    "ApplicableVersion": "any",
+    "Description": "Mein Plugin",
     "DalamudApiLevel": 15,
+    "RepoUrl": "https://github.com",
     "DownloadLinkInstall": "https://github.com/releases/latest/download/latest.zip"
   }
 ]
