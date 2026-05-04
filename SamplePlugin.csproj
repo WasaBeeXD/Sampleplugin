@@ -6,7 +6,15 @@
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
     <IsPackable>false</IsPackable>
     <Copyright>Copyright © 2026</Copyright>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
+
+<PropertyGroup>
+  <!-- Verhindert die Anzeige von Versionskonflikt-Warnungen -->
+  <MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages);MSB3277</MSBuildWarningsAsMessages>
+  <NoWarn>$(NoWarn);MSB3277</NoWarn>
+</PropertyGroup>
 
   <ItemGroup>
     <Content Include="..\Data\goat.png">

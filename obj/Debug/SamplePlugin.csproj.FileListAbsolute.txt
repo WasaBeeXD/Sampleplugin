@@ -4,3 +4,7 @@ C:\repos\SamplePlugin\obj\Debug\SamplePlugin.AssemblyInfo.cs
 C:\repos\SamplePlugin\obj\Debug\SamplePlugin.csproj.CoreCompileInputs.cache
 C:\repos\SamplePlugin\obj\Debug\SamplePlugin.sourcelink.json
 C:\repos\SamplePlugin\obj\Debug\SamplePlugin.csproj.AssemblyReference.cache
+C:\repos\SamplePlugin\bin\Debug\goat.png
+C:\repos\SamplePlugin\obj\Debug\SamplePlugin.dll
+C:\repos\SamplePlugin\bin\Debug\SamplePlugin.deps.json
+C:\repos\SamplePlugin\bin\Debug\SamplePlugin.dll

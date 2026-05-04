@@ -12,8 +12,9 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("SamplePlugin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2026")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.1")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.1+d2511d1385d7af7fdbeee2ca6fb33a69de7768d1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0.1+ed8a7291ae7ed08284f3bff2dea766d92038db84")]
 [assembly: System.Reflection.AssemblyProductAttribute("SamplePlugin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SamplePlugin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.1")]
