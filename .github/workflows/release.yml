@@ -14,11 +14,21 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
+          # Wir geben keine exakte Build-Nummer an, damit er nimmt, was da ist
           dotnet-version: "10.0.x"
-          dotnet-quality: "preview"
+          dotnet-quality: "preview" # Zwingend erforderlich für .NET 10 Preview
 
-      - name: Build & Release
-        uses: goatcorp/Action-DalamudRelease@v1
+      - name: Build
+        run: dotnet build SamplePlugin.csproj -c Release --output ./publish -p:DalamudLibPath=$HOME/.dalamud/6.2.1/
+
+      - name: Create Zip
+        shell: pwsh
+        run: |
+          Compress-Archive -Path ./publish/* -DestinationPath ./latest.zip
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          project-name: SamplePlugin
-          release-variant: main
+          files: ./latest.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
