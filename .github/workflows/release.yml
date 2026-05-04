@@ -17,16 +17,29 @@ jobs:
           dotnet-version: "10.0.x"
           dotnet-quality: "preview"
 
-      - name: Build Plugin
-        # Wir bauen direkt die .csproj, NICHT die .sln
-        # Wir setzen den Pfad auf '.', damit er denkt, die Libs liegen im aktuellen Ordner
-        run: dotnet build SamplePlugin.csproj -c Release --output ./publish -p:DalamudLibPath=. -p:Deterministic=true
-
-      - name: Create Zip
+      - name: Download API 15 Stubs
         shell: pwsh
-        run: Compress-Archive -Path ./publish/* -DestinationPath ./latest.zip
+        run: |
+          # Erstelle den Ordner, den wir in der .csproj definiert haben
+          New-Item -ItemType Directory -Force -Path ./references
+          # Lade die offizielle Dalamud.dll als Referenz (Stub)
+          $url = "https://githubusercontent.com"
+          Invoke-WebRequest -Uri $url -OutFile ./references/Dalamud.dll
 
-      - name: Create Release
+      - name: Build
+        # Wir bauen das Projekt und deaktivieren die automatische ZIP-Erstellung vom SDK
+        run: dotnet build SamplePlugin.csproj -c Release -p:CreateDalamudPluginZip=false
+
+      - name: Create Package
+        shell: pwsh
+        run: |
+          # Wir suchen die DLL und packen sie mit dem Manifest in die ZIP
+          $binPath = "bin/Release/net10.0"
+          # Prüfen, ob win-x64 Unterordner existiert
+          if (Test-Path "$binPath/win-x64") { $binPath = "$binPath/win-x64" }
+          Compress-Archive -Path "$binPath/SamplePlugin.dll", "SamplePlugin.json" -DestinationPath ./latest.zip
+
+      - name: Release
         uses: softprops/action-gh-release@v2
         with:
           files: ./latest.zip

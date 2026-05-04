@@ -16,6 +16,11 @@
   <NoWarn>$(NoWarn);MSB3277</NoWarn>
 </PropertyGroup>
 
+<PropertyGroup>
+    <!-- Das verhindert die Fehlermeldung auf GitHub -->
+    <DalamudLibPath Condition="'$(GITHUB_ACTIONS)' == 'true'">$(SolutionDir)references\</DalamudLibPath>
+</PropertyGroup>
+
   <ItemGroup>
     <Content Include="..\Data\goat.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
