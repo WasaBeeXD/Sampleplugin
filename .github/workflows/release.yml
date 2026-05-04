@@ -18,8 +18,9 @@ jobs:
           dotnet-quality: "preview"
 
       - name: Build Plugin
-        # Wir setzen 'DalamudNoLibPath=true', um die Fehlermeldung zu unterdrücken
-        run: dotnet build -c Release --output ./publish -p:DalamudNoLibPath=true
+        # Wir bauen direkt die .csproj, NICHT die .sln
+        # Wir setzen den Pfad auf '.', damit er denkt, die Libs liegen im aktuellen Ordner
+        run: dotnet build SamplePlugin.csproj -c Release --output ./publish -p:DalamudLibPath=. -p:Deterministic=true
 
       - name: Create Zip
         shell: pwsh
