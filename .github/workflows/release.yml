@@ -34,7 +34,7 @@ jobs:
           copy-external-viewmodels: false
 
       - name: Upload Artifacts
-        uses: softprops/Action-gh-release@v2
+        uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
