@@ -18,12 +18,15 @@ jobs:
           dotnet-quality: "preview"
 
       - name: Download Dalamud Assets
+        shell: pwsh
         run: |
-          invoke-webrequest -Uri https://github.com -OutFile stubs.zip
-          expand-archive -Path stubs.zip -DestinationPath ./stubs
+          # Wir laden die Stubs von Goatcorp herunter
+          $url = "https://githubusercontent.com"
+          New-Item -ItemType Directory -Force -Path ./references
+          Invoke-WebRequest -Uri $url -OutFile ./references/Dalamud.dll
 
       - name: Build Plugin
-        run: dotnet build -c Release --output ./publish -p:DalamudLibPath=../stubs
+        run: dotnet build -c Release --output ./publish -p:DalamudLibPath=./references
 
       - name: Create Zip
         shell: pwsh
