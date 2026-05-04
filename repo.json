@@ -1,0 +1,18 @@
+[
+  {
+    "Author": "Wasa Bee",
+    "Name": "SamplePlugin",
+    "InternalName": "SamplePlugin",
+    "Description": "Das ist nur ein Test.",
+    "RepoUrl": "https://github.com/WasaBeeXD/Sampleplugin/repo.json",
+    "ApplicableVersion": "any",
+    "Tags": ["utility", "ui"],
+    "DalamudApiLevel": 10,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "Punchline": "Es kann nur einen geben.",
+    "DownloadCount": 0
+  }
+]
