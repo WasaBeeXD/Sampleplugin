@@ -27,7 +27,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Create Release Package
-        uses: goatcorp/Action-DalamudRelease@v1
+        uses: goatcorp/Action-DalamudRelease@v1.2.1
         with:
           project-name: SamplePlugin # Hier EXAKT deinen Projektnamen eintragen
           release-variant: main
