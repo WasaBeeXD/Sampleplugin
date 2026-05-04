@@ -4,7 +4,7 @@
     "Name": "SamplePlugin",
     "InternalName": "SamplePlugin",
     "Description": "Das ist nur ein Test.",
-    "RepoUrl": "https://github.com/WasaBeeXD/Sampleplugin/repo.json",
+    "RepoUrl": "https://github.com/WasaBeeXD/Sampleplugin/blob/main/repo.json",
     "ApplicableVersion": "any",
     "Tags": ["utility", "ui"],
     "DalamudApiLevel": 10,
