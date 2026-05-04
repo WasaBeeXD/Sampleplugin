@@ -14,7 +14,9 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "9.0.x" # Sicherer für den Build-Server
+          # Wir geben keine exakte Build-Nummer an, damit er nimmt, was da ist
+          dotnet-version: "10.0.x"
+          dotnet-quality: "preview" # Zwingend erforderlich für .NET 10 Preview
 
       - name: Build
         run: dotnet build -c Release --output ./publish
