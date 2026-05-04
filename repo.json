@@ -6,7 +6,7 @@
     "Description": "Mein erstes Plugin",
     "RepoUrl": "https://github.com",
     "ApplicableVersion": "any",
-    "DalamudApiLevel": 10,
+    "DalamudApiLevel": 15,
     "DownloadLinkInstall": "https://github.com/releases/latest/download/latest.zip"
   }
 ]
