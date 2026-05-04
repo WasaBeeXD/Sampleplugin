@@ -1,7 +1,7 @@
 [
   {
     "Author": "WasaBeeXD",
-    "Name": "SamplePlugin",
+    "Name": "Ein Testplugin",
     "InternalName": "SamplePlugin",
     "Description": "Mein Plugin",
     "DalamudApiLevel": 15,
