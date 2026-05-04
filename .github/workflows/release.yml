@@ -14,21 +14,11 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          # Wir geben keine exakte Build-Nummer an, damit er nimmt, was da ist
           dotnet-version: "10.0.x"
-          dotnet-quality: "preview" # Zwingend erforderlich für .NET 10 Preview
+          dotnet-quality: "preview"
 
-      - name: Build
-        run: dotnet build -c Release --output ./publish
-
-      - name: Create Zip
-        shell: pwsh
-        run: |
-          Compress-Archive -Path ./publish/* -DestinationPath ./latest.zip
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
+      - name: Build & Release
+        uses: goatcorp/Action-DalamudRelease@v1
         with:
-          files: ./latest.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          project-name: SamplePlugin
+          release-variant: main
