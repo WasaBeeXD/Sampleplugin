@@ -9,8 +9,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -18,8 +17,21 @@ jobs:
           dotnet-version: "10.0.x"
           dotnet-quality: "preview"
 
-      - name: Build and Release
-        uses: goatcorp/Action-DalamudRelease@v1
+      - name: Download Dalamud Assets
+        run: |
+          invoke-webrequest -Uri https://github.com -OutFile stubs.zip
+          expand-archive -Path stubs.zip -DestinationPath ./stubs
+
+      - name: Build Plugin
+        run: dotnet build -c Release --output ./publish -p:DalamudLibPath=../stubs
+
+      - name: Create Zip
+        shell: pwsh
+        run: Compress-Archive -Path ./publish/* -DestinationPath ./latest.zip
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          project-name: SamplePlugin
-          release-variant: main
+          files: ./latest.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
